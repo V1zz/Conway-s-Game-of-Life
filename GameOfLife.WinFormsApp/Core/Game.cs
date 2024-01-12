@@ -91,7 +91,7 @@
         }
         
 
-        // TODO: Документація, рефакторінг та розбір алгоритму
+        // TODO: Документація, рефакторінг та розбір алгоритму => private void GenerateGridUsingRandomDensityFactor(int generationDensity)
         private void GenerateGridUsingRandomDensityFactor(int generationDensity)
         {
             for (var column = 0; column < _columns; column++)
@@ -100,7 +100,7 @@
         }
 
 
-        // TODO: Документація, рефакторінг та розбір алгоритму
+        // TODO: Документація, рефакторінг та розбір алгоритму => private int GetCellNeighborsCount(int column, int row)
         private int GetCellNeighborsCount(int column, int row)
         {
             var result = 0;
@@ -123,7 +123,7 @@
             return result;
         }
 
-        // TODO: Документація, рефакторінг та розбір алгоритму
+        // TODO: Документація, рефакторінг та розбір алгоритму => private bool[,] GetCleanBoolArray()
         private bool[,] GetCleanBoolArray() => new bool[_columns, _rows];
 
         /// <summary>
