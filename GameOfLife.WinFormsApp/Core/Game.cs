@@ -8,7 +8,7 @@
 
 
 
-        #region CTOR
+        #region CTORs
 
         /// <summary>
         ///     Constructor create instance of class Game;
@@ -71,6 +71,7 @@
         #endregion
 
 
+
         #region private METHODS
 
         /// <summary>
@@ -81,18 +82,21 @@
         {
             var result = 0;
 
-            for (var column = 0; column < _map.GetLength(0); column++)
-                for (var row = 0; row <  _map.GetLength(1); row++)
+            for (var column = 0; column < _columns; column++)
+                for (var row = 0; row <  _rows; row++)
                     if (_map[column, row]) 
                         result++;
 
             return result;
         }
+        
 
-
+        // TODO: Документація, рефакторінг та розбір алгоритму
         private void GenerateGridUsingRandomDensityFactor(int generationDensity)
         {
-            throw new NotImplementedException();
+            for (var column = 0; column < _columns; column++)
+                for (var row = 0; row < _rows; row++)
+                    this._map[column, row] = new Random().Next(1, 100) <= generationDensity;
         }
 
 
@@ -119,10 +123,8 @@
             return result;
         }
 
-        private bool[,] GetCleanMap()
-        {
-            throw new NotImplementedException();
-        }
+        // TODO: Документація, рефакторінг та розбір алгоритму
+        private bool[,] GetCleanBoolArray() => new bool[_columns, _rows];
 
         /// <summary>
         ///     Inserts the selected boolean value by coordinates.
@@ -218,7 +220,7 @@
         /// </summary>
         internal void CleanMap() 
             => 
-                _map = GetCleanMap();
+                _map = GetCleanBoolArray();
 
 
         #endregion
