@@ -1,5 +1,3 @@
-// Ignore Spelling: App
-
 namespace GameOfLife.WinFormsApp
 {
     internal static class Program
