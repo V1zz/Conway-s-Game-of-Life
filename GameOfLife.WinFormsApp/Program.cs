@@ -8,7 +8,9 @@ namespace GameOfLife.WinFormsApp
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
             ApplicationConfiguration.Initialize();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Ui.MainForm());
         }
     }
